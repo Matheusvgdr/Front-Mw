@@ -20,3 +20,12 @@ modeSwitch.addEventListener("click", () => {
 
     }
 });
+
+document.getElementById("registerW").onclick = function (){
+    Swal.fire({
+        icon: 'success',
+        title: 'Login correct',
+        showConfirmButton: false,
+        timer: 2000
+    })
+};

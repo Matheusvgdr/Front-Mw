@@ -19,13 +19,62 @@
             <span>A place for your money</span>
 
         </div>
+        <div class="logo">
 
+            <h1>My Wallet <img class="goldenCoin" src="imgs/Gold coins.svg" alt="golden coins"></h1>
+            <span>A place for your money</span>
+
+        </div>
 
         <section class="container_input border">
 
             <h3>Sign in</h3>
 
+            <form action="LoginServlet" method="post">
+
+                <div class="input-data">
+
+                    <input type="text" name="userName" id="userName" autocomplete="off" required>
+                    <div class="underline"></div>
+
+                    <label>User</label>
+
+                </div>
+
+                <div class="input-data">
+
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <div class="underline"></div>
+
+                    <label>Password</label>
+
+                </div>
+
+                <button class="btn btn1" id="enter">
+
+                    <strong> Enter</strong>
+
+                </button>
+
+                
+            </form>
+            <span class="register"> Don't have a count?<strong> <a id="link_signUp"href="#">Sign up</a></strong></span>
+        </section>
+
+        <section class="register_border">
+
+            <h3>Sign up</h3>
+
             <form action="" method="">
+
+                <div class="input-data">
+
+                    <input type="text" name="" id="" autocomplete="off" required>
+                    <div class="underline"></div>
+
+                    <label>Name</label>
+
+                </div>
 
                 <div class="input-data">
 
@@ -45,14 +94,24 @@
 
                 </div>
 
+                <div class="input-data">
+
+                    <input type="text" name="" id="" autocomplete="off" required>
+                    <div class="underline"></div>
+
+                    <label>CPF</label>
+
+                </div>
+
                 <button class="btn btn1" id="enter">
 
                     <strong> Enter</strong>
 
                 </button>
 
+                
             </form>
-
+            <span class="login"> Already have a count?<strong> <a id="link_signIn"href="#">Sign in</a></strong></span>
         </section>
 
         <aside>

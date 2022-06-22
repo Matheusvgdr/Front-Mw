@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/home.css">
-
+    <title>Movimentation</title>
+    <link rel="stylesheet" href="../css/movimentation.css">
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-
 <body>
     <nav class="sidebar close">
         <header>
@@ -33,7 +30,7 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-plus-circle icon'></i>
-                            <span id = "registerW" class="text nav-text">Register wallet</span>
+                            <span id="registerW" class="text nav-text">Register wallet</span>
                         </a>
                     </li>
 
@@ -93,58 +90,31 @@
         </div>
 
     </nav>
-
     <section class="home">
-        <div class="text">Welcome to home</div>
+        <div class="text">Your movimentation</div>
     </section>
 
-    <section id="main">
-
-        <div class="withdraw">
-
-            <div class="main_container">
-                <h2> Day's Withdraw </h2>
-                <span>R$ 0,00</span>
+    <section id="main_movi">
+        <div class="main_container">
+            <div class="date">
+                <h3>Date</h3>
+                <span>16/02/2022</span>
             </div>
-            <img src="../imgs/money_down.svg" alt="">
-
+            <div class="money">
+                <h3>Money</h3>
+                <span>RS 50,00</span>
+            </div>
+            <div class="type">
+                <h3>Movimentation's type</h3>
+                <span>Deposit</span>
+            </div>
+            
         </div>
 
-        <div class="wallets">
-            <div class="main_container">
-                <h2>Your wallets</h2>
-            </div>
-            <img src="../imgs/Wallet_brown.svg" alt="">
-        </div>
-
-        <div class="deposit">
-            <div class="main_container">
-                <h2>Day's deposit</h2>
-                <span>R$ 0,00</span>
-            </div>
-            <img src="../imgs/money_up.svg" alt="">
-        </div>
-
-        <div class="money">
-            <div class="main_container">
-                <h2>Money </h2>
-                <span>R$ 0,00</span>
-            </div>
-            <img src="../imgs/money.svg" alt="">
-        </div>
     </section>
-
-    <div class="ocean">
-
-        <div class="wave"></div>
-        <div class="wave"></div>
-
-    </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- ----------SCRIPT ------------- -->
     <script src="../js/home.js"></script>
-
 </body>
-
 </html>

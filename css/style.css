@@ -12,29 +12,31 @@
     --color-input: #909090;
     --colo-text-button: #ffffff;
 }
-
+/* ------------------- RESET --------------------------*/
 *{
     padding: 0;
     margin: 0;
     outline: none;
     box-sizing: border-box;
 }
+
 body{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     
 }
+
 .circle{
     position: absolute;
-    left: 45rem;
+    left: 40rem;
     top: -11.12rem;
     content: "";
     background: var(--color-base);
     height: 65.31rem;
     width: 65.31rem;
     border-radius: 50%;
-    z-index: -222;
+    z-index: 5;
 }
 /*-----------------IMAGES--------------*/
 .goldenCoin{
@@ -195,4 +197,97 @@ h3{
 .input-data input:focus ~ .underline:before,
 .input-data input:valid ~ .underline:before{
   transform: scaleX(1);
+}
+
+.register{
+    font-family: var(--font-SubTitle);
+    font-size: 13px;
+    position: relative;
+    top: 8px;
+    padding-left: 22px;
+}
+
+.register a{
+    text-decoration: none;
+    color: var(--color-text);
+    transition: .3s;
+}
+
+.register a:hover{
+    color: var(  --coolor-secundary);
+}
+
+
+/*--------------REGISTER USER ------------------*/
+
+.logo:nth-child(2){
+    position:absolute;
+    top: 5%;
+    right: -32%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+.register_border{
+    margin-top: 2rem;
+    padding: 20px  60px;
+    position:absolute;
+    top: 22%;
+    right: 12%;
+    width: 27.82%;
+    border: 1px solid var(--color-text);
+    border-radius: 22px; 
+    box-shadow: 3px 3px 0px 0.5px var(--color-text);
+}
+
+.register_border .input-data{
+    height: 40px;
+    width: 100%;
+    position:relative;
+    top: 52%;
+    margin-bottom: 1rem;
+}
+.register_border .input-data input{
+    font-family: var(--font-SubTitle);
+    height: 70%;
+    width: 100%;
+    border: none;
+    font-size: 0.8rem;
+    border-bottom: 2px solid var(--color-text);
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+
+  transform: translateY(-1.1rem);
+  font-size: .85rem;
+  color: var(--color-base);
+
+}
+.register_border .input-data label{
+    font-family: var(--font-SubTitle);
+    font-size: .85rem;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    color: var(--color-input);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.login{
+    font-family: var(--font-SubTitle);
+    font-size: 13px;
+    position: relative;
+    top: 8px;
+    padding-left: 18px;
+    text-align: center;
+}
+.login a{
+    text-decoration: none;
+    color: var(--color-text);
+    transition: .3s;
+}
+
+.login a:hover{
+    color: var(  --coolor-secundary);
 }
