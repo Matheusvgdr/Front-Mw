@@ -14,21 +14,23 @@ let signIn = document.getElementById('link_signIn');
 
 signUp.addEventListener('click', () => {
      circle.style.position = 'absolute';
-     circle.style.left = "-27rem" ;
+     circle.style.left = "-28rem" ;
      circle.style.transition = "2s";
 
     a.style.position = 'absolute';
-    a.style.left = "52.5%";
+    a.style.left = "50.5%";
+    a.style.top = "34%";
     a.style.transition = "2s";
 });
 
 signIn.addEventListener('click', () => {
     circle.style.position = 'absolute';
-    circle.style.left = "40rem" ;
+    circle.style.left = "50rem" ;
     circle.style.transition = "2s";
 
    a.style.position = 'absolute';
-   a.style.left = "10rem";
+   a.style.left = "15rem";
+   a.style.top = "34%";
    a.style.transition = "2s";
 });
 
