@@ -290,8 +290,139 @@ h3{
 .login a:hover{
     color: var(  --coolor-secundary);
 }
+/*----------------------RESPOSIVITY --------------------*/
+@media (min-width: 1050px) and (max-width: 1499px){
+    body{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        
+    }
+    .circle{
+        position: absolute;
+        left: 42rem;
+        top: -11.12rem;
+        content: "";
+        background: var(--color-base);
+        height: 75.31rem;
+        width: 75.31rem;
+        border-radius: 50%;
+        z-index: 5;
+    }
 
-@media (min-width: 1200px) and (max-width: 1750px){
+.wallet{
+    position: absolute;
+    top: 34%;
+    left: 9rem;
+    width: 325px;
+    height: 325px;
+}
+
+.border{
+    margin-top: 2rem;
+    padding: 20px  60px;
+    position:absolute;
+    top: 30%;
+    left: 7%;
+    width: 27.82%;
+    border: 1px solid var(--color-text);
+    border-radius: 22px; 
+    box-shadow: 3px 3px 0px 0.5px var(--color-text);
+}
+
+.logo{
+    position:absolute;
+    top: 17%;
+    left: 9%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+span{
+    font-family: var(--font-SubTitle);
+    font-weight: 400;
+    font-size: 1rem;   
+    
+}
+h1{
+    font-family: var(--font-Title);
+    font-weight: 500;
+    font-size: 3.5rem ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;    
+}
+
+h3{
+    padding-top: 35px;
+    margin-bottom: 10px;
+    font-family: var(--font-SubTitle);
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    top: -1.5rem;
+    font-size: 1.05rem;
+    text-decoration: underline;
+
+}
+.register{
+    font-family: var(--font-SubTitle);
+    font-size: 13px;
+    position: relative;
+    top: 8px;
+    padding-left: 62px;
+}
+
+.btn{
+    left: 31%; 
+    background: none;
+    border:  2px solid var(--color-base);
+    border-radius: 6px;
+    font-family: var(--font-SubTitle);
+    color: #03A66A;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    min-width: 100px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+}
+.logo:nth-child(2){
+    position:absolute;
+    top: 9%;
+    right: -40%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+.register_border{
+    margin-top: 2rem;
+    padding: 20px  60px;
+    position:absolute;
+    top: 23%;
+    right: 12%;
+    width: 27.82%;
+    border: 1px solid var(--color-text);
+    border-radius: 22px; 
+    box-shadow: 3px 3px 0px 0.5px var(--color-text);
+}
+
+.login{
+    font-family: var(--font-SubTitle);
+    font-size: 13px;
+    position: relative;
+    top: 8px;
+    padding-left: 54px;
+    text-align: center;
+}
+
+}
+@media (min-width: 1500px) and (max-width: 1750px){
     body{
         width: 100vw;
         height: 100vh;

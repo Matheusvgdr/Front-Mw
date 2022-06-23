@@ -14,7 +14,7 @@ let signIn = document.getElementById('link_signIn');
 
 signUp.addEventListener('click', () => {
      circle.style.position = 'absolute';
-     circle.style.left = "-28rem" ;
+     circle.style.left = "-30rem" ;
      circle.style.transition = "2s";
 
     a.style.position = 'absolute';
