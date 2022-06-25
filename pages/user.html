@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <li class="nav-link">
+                <a href="user.html">
+                    <i class='bx bx-user icon'></i>
+                    <span class="text nav-text">User</span>
+                </a>
+            </li>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+
+                    <li class="nav-link">
+                        <a href="wallet.html">
+                            <i class='bx bx-plus-circle icon'></i>
+                            <span id="registerW" class="text nav-text">Register wallet</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="movimentation.html">
+                            <i class='bx bx-receipt icon'></i>
+
+                            <span class="text nav-text">Movimentation</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-money-withdraw icon'></i>
+                            <span class="text nav-text">Withdraw money</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-money icon'></i>
+                            <span class="text nav-text">Deposit</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="wallet.html">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="../index.html">
+                        <i id="logOut" class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+    <section class="home">
+        <div class="text">Your profile</div>
+    </section>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/home.js"></script>
+
+</body>
+
+</html>
