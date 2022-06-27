@@ -324,8 +324,8 @@ body.dark .home .text{
 
 #main_wallet{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
     padding: 6rem 10rem;
     width: 93vw;
     position: absolute;
@@ -345,64 +345,7 @@ body.dark .home .text{
     z-index: 5;
     
 }
-#main_wallet h2{
-    font-size: 18px;
-    width: 150px;
-    position: relative;
-}
-#main_wallet span{
-    font-size: 15px;
-    position: relative;
-    top: 5px;
-}
-.wallet{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    width: 200px;
-    height: 200px;
-    background: var(--sidebar-color);
-    border-bottom: 10px solid #D18A00;
-    border-radius: 6px;
-    transition: var(--tran-05);
-    transform: scale(.95);
-} 
 
-.wallet:hover{
-    color: var(--colo-text-button);
-    transform: scale(1);
-    cursor: pointer;
-    border-radius: 6px;
-
-}
-
-.wallet::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    background: #D18A00;
-    transition: transform 0.5s;
-    transform-origin: 0 0;
-    transition-timing-function: cubic-bezier(0.5, 1,0.4,0.7);
-}
-
-.wallet::before{
-    transform:  scaleY(0);
-    border-radius: 6px;
-
-    
-}
-.wallet:hover::before{
-    border-radius: 6px;
-    transform: scaleY(1.05);
-}
 
 body.dark .wallet{
     color: var(--toggle-color);
@@ -485,8 +428,8 @@ body.dark .container_icons i{
     align-items: center;
     text-align: center;
     padding: 20px;
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
     background: var(--sidebar-color);
     border-bottom: 10px solid #166D4E;
     border-radius: 6px;
@@ -528,68 +471,6 @@ body.dark .container_icons i{
 body.dark #new{
     color: var(--toggle-color);
     background: var(--primary-color-light);
-}
-
-#new .input-data{
-    height: 40px;
-    width: 70%;
-    position:relative;
-    top: 0;
-    margin-bottom: 6%;
-}
-#new .input-data input{
-    font-family: var(--font-SubTitle);
-    font-weight: 500;
-    height: 70%;
-    width: 100%;
-    border: none;
-    font-size: 0.8rem;
-    border-bottom: 2px solid var(--color-text);
-    color: var(--body-color);
-    outline: none;
-    background: transparent;
-}
-
- .input-data label{
-    font-family: var(--font-SubTitle);
-    font-size: .85rem;
-    position: absolute;
-    bottom: 16px;
-    left:0;
-    color: var(--color-input);
-    pointer-events: none;
-    transition: all 0.3s ease;
-  
-}
-.input-data input:focus ~ label,
-.input-data input:valid ~ label{
-
-  transform: translateY(-1.1rem);
-  font-size: .85rem;
-  color: var(--body-color);
-
-}
-
-.input-data .underline{
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 11px;
-  left: -60px;
-}
-.input-data .underline:before{
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: var(--colo-text-button);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-.input-data input:focus ~ .underline:before,
-.input-data input:valid ~ .underline:before{
-  transform: scaleX(1);
 }
 
 #new h2{
