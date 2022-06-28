@@ -1,3 +1,12 @@
+<%@page import="service.UserService" %>
+<%@page import="model.User" %>
+<%@page import="model.Wallet" %>
+<%@page import="service.WalletService" %>
+<%@page import="service.MovimentationService" %>
+<%@page import="model.Movimentation" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="dao.MovimentationDAO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +22,19 @@
 </head>
 
 <body>
+    
+<!-------------------USUARIO LOGADO------------------------------>
+
+<%User us = (User)session.getAttribute("userSession"); %>
+
+<!--------------------------------------------------------------->
+
     <nav class="sidebar close">
         <header>
             <li class="nav-link">
                 <a href="#">
                     <i class='bx bx-user icon'></i>
-                    <span class="text nav-text">User</span>
+                    <span class="text nav-text"><%=us.getUserName() %></span>
                 </a>
             </li>
             <i class='bx bx-chevron-right toggle'></i>
@@ -33,6 +49,14 @@
                         <a href="#">
                             <i class='bx bx-plus-circle icon'></i>
                             <span id="registerW" class="text nav-text">Register wallet</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="home.jsp">
+                            <i class='bx bx-home icon'></i>
+
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
@@ -95,13 +119,25 @@
     <section class="home">
         <div class="text">Your wallets</div>
     </section>
+
+
     <section id="main_wallet">
-        
+
+        <% WalletService serviceW = new WalletService();
+        List<Wallet> listW = new ArrayList<Wallet>();
+     
+       listW = serviceW.listWallet(us.getId());
+     
+       for(Wallet w: listW){%>
+
         <div class="wallet">
             <img src="../imgs/Wallet_brown.svg" alt="">
             <div class="main_container">
-                <h2>Casa</h2>
-                <span>RS 0,00</span>
+
+                <h2><%=w.getNameWallet()%></h2>
+                <span>R$ <%=w.getBudget() %></span>
+
+
             </div>
 
             <div class="container_icons">
@@ -111,54 +147,12 @@
             </div>
 
         </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Mercado</h2>
-                <span>RS 0,00</span>
-            </div>
 
-        </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Faculdade</h2>
-                <span>RS 0,00</span>
-            </div>
 
-        </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Passagem</h2>
-                <span>RS 0,00</span>
-            </div>
-
-        </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Lazer</h2>
-                <span>RS 0,00</span>
-            </div>
-
-        </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Combustível</h2>
-                <span>RS 0,00</span>
-            </div>
-
-        </div>
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-                <h2>Viagem</h2>
-                <span>RS 0,00</span>
-            </div>
-
-        </div>
+        <%
+		}
+		%>
+        
     </section>
 
 

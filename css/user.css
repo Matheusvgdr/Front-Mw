@@ -336,6 +336,7 @@ body.dark .home .text{
     height: 90vh;
 }
 .modification{
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -428,6 +429,49 @@ body.dark .modification{
     font-weight: 600;
     display: inline;
     text-align: left;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+    background: var(--sidebar-color);
+    border-bottom: 10px solid #3a3b3c;
+    border-radius: 6px;
+    transition: var(--tran-05);
+    transform: scale(.95);
+}
+
+.info:hover{
+    transform: scale(1);
+}
+
+body.dark .info{
+    color: var(--colo-text-button);
+}
+
+.info .input-data{
+    height: 40px;
+    width: 100%;
+    position:relative;
+    top: 0;
+    margin-bottom: 6%;
+}
+.info .input-data input{
+    font-family: var(--font-SubTitle);
+    font-weight: 500;
+    height: 70%;
+    width: 70%;
+    border: none;
+    font-size: 0.8rem;
+    border-bottom: 2px solid var(--color-text);
+    outline: none;
+    background: transparent;
 }
 
 .btn{

@@ -1,3 +1,12 @@
+<%@page import="service.UserService" %>
+<%@page import="model.User" %>
+<%@page import="model.Wallet" %>
+<%@page import="service.WalletService" %>
+<%@page import="service.MovimentationService" %>
+<%@page import="model.Movimentation" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="dao.MovimentationDAO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,15 +20,32 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="../css/user.css">
+
+    <script>
+        function confirmDeleteUser(id){
+            var answer = confirm("Confirma a exclusão do registro?");
+            
+            if(answer == true){
+                window.location.href = "../DeleteUserServlet?id=" + id;
+            }
+        }
+        </script>
 </head>
 
 <body>
+
+       <!-------------------USUARIO LOGADO------------------------------>
+
+       <%User us = (User)session.getAttribute("userSelected"); %>
+
+       <!--------------------------------------------------------------->
+       
     <nav class="sidebar close">
         <header>
             <li class="nav-link">
                 <a href="user.html">
                     <i class='bx bx-user icon'></i>
-                    <span class="text nav-text">User</span>
+                    <span class="text nav-text"><%=us.getUserName() %></span>
                 </a>
             </li>
             <i class='bx bx-chevron-right toggle'></i>
@@ -34,6 +60,14 @@
                         <a href="wallet.html">
                             <i class='bx bx-plus-circle icon'></i>
                             <span id="registerW" class="text nav-text">Register wallet</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="home.jsp">
+                            <i class='bx bx-home icon'></i>
+
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
@@ -97,49 +131,60 @@
         <div class="text">Your profile</div>
     </section>
 
+ 
 
     <section id="main_user">
       
-        <div class="modification">
+        <div class="info">
 
             <h2>Your infos</h2>
 
             <div class="container_info">
+                <%
+                UserService serviceU = new UserService();
+                List<User> list = new ArrayList<User>();
+                
+                list = serviceU.list(us.getId());
+                
+                for(User usr: list){%>
 
                 <div class="name">
 
-                    <span><strong>Name:</strong> Matheus Victor</span>
+                    <span><strong>Name:</strong> <%=usr.getPersonName() %></span>
                     
                 </div>
 
                 <div class="underline"></div>
 
                 <div class="userName">
-                    <span><strong>Username:</strong> Maths</span>
+                    <span><strong>Username:</strong> <%=usr.getUserName() %></span>
                    
                 </div>
 
                 <div class="underline"></div>
 
                 <div class="password">
-                    <span><strong>Password:</strong> 12345</span>
+                    <span><strong>Password:</strong> <%=usr.getUserPassword() %></span>
                     
                 </div>
 
                 <div class="underline"></div>
 
                 <div class="cpf">
-                    <span><strong>CPF:</strong> 123.456.789-50</span>
+                    <span><strong>CPF:</strong><%=usr.getCpf() %></span>
                    
                 </div>
 
                 <div class="underline"></div>
 
                 <div class="container_icons">
-                    <a href="#"><i class='bx bx-edit icon '></i></a>
-                    <a href="#"><i class='bx bx-x-circle icon '></i></a>
+                    <a href="../PrepareModificationServlet?id=<%=usr.getId()%>" id="edit"><i class='bx bx-edit icon '></i></a>
+                    <a href="#" onclick="confirmDeleteUser(<%=usr.getId()%>)"><i class='bx bx-x-circle icon '></i></a>
                 </div>
 
+            <%
+			}
+			%>
             </div>
             
         </div>
@@ -151,7 +196,7 @@
 
                 <div class="input-data">
 
-                    <input type="text" name="personName" id="personName" autocomplete="off" required>
+                    <input type="text" value="<%=usr.getPersonName() %>" name="personName" id="personName" autocomplete="off" required>
                     <div class="underline"></div>
 
                     <label>Name</label>
@@ -160,7 +205,7 @@
 
                 <div class="input-data">
 
-                    <input type="text" name="userName" id="userName" autocomplete="off" required>
+                    <input type="text" value="<%=usr.getUserName() %>" name="userName" id="userName" autocomplete="off" required>
                     <div class="underline"></div>
 
                     <label>Username</label>
@@ -168,7 +213,7 @@
                 </div>
                 <div class="input-data">
 
-                    <input type="password" name="userPassword" id="userPassword" autocomplete="off" required>
+                    <input type="password" value="<%=usr.getUserPassword() %>" name="userPassword" id="userPassword" autocomplete="off" required>
                     <div class="underline"></div>
 
                     <label>Password</label>
@@ -176,7 +221,7 @@
                 </div>
                 <div class="input-data">
 
-                    <input type="text" name="cpf" id="cpf" autocomplete="off" required>
+                    <input type="text" value="<%=usr.getCpf() %>" name="cpf" id="cpf" autocomplete="off" required>
                     <div class="underline"></div>
 
                     <label>CPF</label>

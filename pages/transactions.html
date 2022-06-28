@@ -8,32 +8,32 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="dao.MovimentationDAO" %>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <title>Transactions</title>
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
+    <link rel="stylesheet" href="../css/transactions.css">
 </head>
 
 <body>
 
-     <!-------------------USUARIO LOGADO------------------------------>
+       <!-------------------USUARIO LOGADO------------------------------>
 
-     <%User us = (User)session.getAttribute("userSession"); %>
+       <%User us = (User)session.getAttribute("userSession"); %>
 
-     <!--------------------------------------------------------------->
-     
+       <!--------------------------------------------------------------->
+       
     <nav class="sidebar close">
         <header>
             <li class="nav-link">
-                <a href="#">
+                <a href="user.html">
                     <i class='bx bx-user icon'></i>
                     <span class="text nav-text"><%=us.getUserName() %></span>
                 </a>
@@ -47,14 +47,21 @@
                 <ul class="menu-links">
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="wallet.html">
                             <i class='bx bx-plus-circle icon'></i>
-                            <span id = "registerW" class="text nav-text">Register wallet</span>
+                            <span id="registerW" class="text nav-text">Register wallet</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="home.jsp">
+                            <i class='bx bx-home icon'></i>
+
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="movimentation.html">
                             <i class='bx bx-receipt icon'></i>
 
                             <span class="text nav-text">Movimentation</span>
@@ -76,7 +83,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="wallet.html">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">Wallets</span>
                         </a>
@@ -87,7 +94,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="../index.html">
                         <i id="logOut" class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -109,96 +116,67 @@
         </div>
 
     </nav>
-
     <section class="home">
-        <div class="text">Welcome to home</div>
+        <div class="text">Your profile</div>
     </section>
 
-    <% 
+ 
+
+    <section id="main_user">
+      
+        <div class="transactions">
+            <h2>Deposit or withdraw your money</h2>
+            <form action="ModifyUserServlet" method="post">
+                <input type="hidden" name="id" id="id" value="<%=usr.getId() %>">
+
+                <div class="input-data">
+
+                    <input type="date" name="personName" id="personName" autocomplete="off" required>
+                    <div class="underline"></div>
+
+
+                </div>
+
+                <div class="input-data">
+
+                    <input type="number" name="userName" id="userName" autocomplete="off" required>
+                    <div class="underline"></div>
+
+                    <label>Money</label>
+
+                </div>
+
+                
+                <select name="idType" id="idType">
+                    <option value="0" ><strong>Select...</strong></option>
+                 
+                      <option value="<%=tp.getId() %>"><strong>Deposit</strong></option>
+   
+                    </select>
+
+
+                    <button class="btn">Enter</button>
+
+                    
+                    <div class="input-data">
+
+                        <input type="hidden" name="userPassword" id="userPassword" autocomplete="off" required>
+                        <div class="underline"></div>
     
-    MovimentationDAO mo = new MovimentationDAO();
+    
+                    </div>
 
-	List<Movimentation> lis = new ArrayList<Movimentation>();
-    List<Movimentation> listaW = new ArrayList<Movimentation>();
+                
 
-	double calcD = 0;
-	lis = mo.listDeposits(us.getId(), 1);
-	
-	for(Movimentation i: lis){
-	
-		calcD += i.getMoney();
-		
-	}
-	
-	
-	double calcW = 0;
-	lis = mo.listWithdraw(us.getId(), 2);
-	
-	for(Movimentation i: lis){
-	
-		calcW += i.getMoney();
-		
-	}
-	
-	double totalMoney = calcD - calcW;
-	%>
-
-    <section id="main">
-
-        <div class="withdraw">
-
-            <div class="main_container">
-                <h2> Day's Withdraw </h2>
-                <span>R$ 0,00</span>
-            </div>
-            <img src="../imgs/money_down.svg" alt="">
-
+            </form>
+            
         </div>
+        
 
-        <div class="wallets">
-            <div class="main_container">
-                <h2>Your wallets</h2>
-            </div>
-            <img src="../imgs/Wallet_brown.svg" alt="">
-        </div>
-
-        <div class="deposit">
-            <div class="main_container">
-                <h2>Day's deposit</h2>
-                <span>R$ <%=calcD %></span>
-            </div>
-            <img src="../imgs/money_up.svg" alt="">
-        </div>
-
-        <div class="money">
-            <div class="main_container">
-                <h2>Money </h2>
-                <% 
-                	if(calcW > calcD){
-                		
-                	%>
-                    <span>Não é possivel realizar o saque</span>
-						
-					<% } else{%>
-
-                <span>R$ <%=totalMoney %></span>
-
-                <% } %>
-
-            </div>
-            <img src="../imgs/money.svg" alt="">
-        </div>
     </section>
 
-    <div class="ocean">
-
-        <div class="wave"></div>
-        <div class="wave"></div>
-
-    </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- ----------SCRIPT ------------- -->
     <script src="../js/home.js"></script>
 
 </body>

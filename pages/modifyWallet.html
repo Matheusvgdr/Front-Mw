@@ -1,3 +1,12 @@
+<%@page import="service.UserService" %>
+<%@page import="model.User" %>
+<%@page import="model.Wallet" %>
+<%@page import="service.WalletService" %>
+<%@page import="service.MovimentationService" %>
+<%@page import="model.Movimentation" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="dao.MovimentationDAO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallets</title>
+    <title>Modification Wallet</title>
     <link rel="stylesheet" href="../css/modifyW.css">
 
     <!----===== Boxicons CSS ===== -->
@@ -13,12 +22,21 @@
 </head>
 
 <body>
+
+<!-------------------USUARIO LOGADO------------------------------>
+
+<%User us = (User)session.getAttribute("userSession"); %>
+<%Wallet us = (Wallet)session.getAttribute("WalletSelected"); %>
+
+<!--------------------------------------------------------------->
+
+
     <nav class="sidebar close">
         <header>
             <li class="nav-link">
                 <a href="#">
                     <i class='bx bx-user icon'></i>
-                    <span class="text nav-text">User</span>
+                    <span class="text nav-text"><%=us.getUserName() %></span>
                 </a>
             </li>
             <i class='bx bx-chevron-right toggle'></i>
@@ -33,6 +51,13 @@
                         <a href="#">
                             <i class='bx bx-plus-circle icon'></i>
                             <span id="registerW" class="text nav-text">Register wallet</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="home.jsp">
+                            <i class='bx bx-home icon'></i>
+
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
@@ -95,57 +120,28 @@
     <section class="home">
         <div class="text">Your wallets</div>
     </section>
+
+    
+    
     <section id="main_wallet">
 
-        <div class="wallet" id="new">
-            <img src="../imgs/moneyGreen.svg" alt="">
-            <div class="main_container">
-                <h2>New Wallet</h2>
-                <form action="" method="post">
-                   
-                <div class="input-data">
-
-                    <input type="text" name="personName" id="personName" autocomplete="off" required>
-                    <div class="underline"></div>
-
-                    <label>Name</label>
-
-                </div>
-
-                <div class="input-data">
-
-                    <input type="text" name="userName" id="userName" autocomplete="off" required>
-                    <div class="underline"></div>
-
-                    <label>Money</label>
-
-                </div>
-
-                    <button class="btn"><i class='bx bx-right-arrow-circle icon moon'></i></button>
-
-                </form>
-                
-            </div>
-
-        </div>
-
 
         <div class="wallet" id="new">
-            <img src="../imgs/moneyGreen.svg" alt="">
+            <img src="../imgs/Iron Safe.svg" alt="">
             <div class="main_container">
                 <h2>Change Wallet</h2>
-                <form action="" method="post">
+                <form action="../ModifyWalletServlet" method="post">
                    
                 <div class="input-data">
-
-                    <input type="text" name="personName" id="personName" autocomplete="off" required>
+                    <input type="hidden" value="<%=w.getId() %>" name="id" id="id">
+                    <input type="text" value="" name="nameWallet" id="nameWallet" autocomplete="off" required>
                     <div class="underline"></div>
 
-                    <label>Name</label>
+                    <label>Name wallet</label>
 
                 </div>
 
-                    <button class="btn"><i class='bx bx-right-arrow-circle icon moon'></i></button>
+                    <button class="btn">Change</button>
 
                 </form>
                 
@@ -154,52 +150,7 @@
         </div>
 
         
-        <div class="wallet" id="new">
-            <img src="../imgs/wallet_up.svg" alt="">
-            <div class="main_container">
-                <h2>Deposit Money</h2>
-                <form action="" method="post">
-                   
-                <div class="input-data">
-
-                    <input type="text" name="personName" id="personName" autocomplete="off" required>
-                    <div class="underline"></div>
-
-                    <label>Name</label>
-
-                </div>
-
-                    <button class="btn"><i class='bx bx-right-arrow-circle icon moon'></i></button>
-
-                </form>
-                
-            </div>
-
-        </div>
-
-        <div class="wallet" id="new">
-            <img src="../imgs/wallet_down.svg" alt="">
-            <div class="main_container">
-                <h2>Withdraw Money</h2>
-                <form action="" method="post">
-                   
-                <div class="input-data">
-
-                    <input type="text" name="personName" id="personName" autocomplete="off" required>
-                    <div class="underline"></div>
-
-                    <label>Name</label>
-
-                </div>
-
-                    <button class="btn"><i class='bx bx-right-arrow-circle icon moon'></i></button>
-
-                </form>
-                
-            </div>
-
-        </div>
-        
+      
         
     </section>
 
