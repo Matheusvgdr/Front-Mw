@@ -87,7 +87,7 @@ form input:focus{
 .content{
     position: relative;
     padding: 10px 55px;
-    top: 20%;
+    top: 13%; /*20%*/
     display: flex;
     flex-direction: column;
     align-items: center;

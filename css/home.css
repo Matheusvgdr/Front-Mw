@@ -326,11 +326,11 @@ body.dark .home .text {
 #main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 60px;
+  grid-gap: 30px; /*60px*/
   padding: 6rem 5rem;
   width: 93vw;
   position: absolute;
-  top: 0;
+  top: -60px; /*0*/
   left: 5.5%;
   height: 100vh;
   transition: var(--tran-05);
@@ -493,7 +493,7 @@ body.dark .home .text {
   gap: 10px;
 }
 #main .r2 .flex h2 {
-  font-size: 16px;
+  font-size: 13px; /*16px*/
   font-weight: 400;
 }
 #main .r2 .flex img {
@@ -502,7 +502,7 @@ body.dark .home .text {
 #main .r2 .flex span {
   margin-left: 60px;
   margin-top: 7px;
-  font-size: 15px;
+  font-size: 13px; /*15px*/
   font-weight: 800;
 }
 #main .r3 {
@@ -612,3 +612,6 @@ body.dark .home .text {
 }
 
 /*# sourceMappingURL=home.css.map */
+
+/*PC Sala - 1600x900*/
+/*Data show senac - 1360x768*/
