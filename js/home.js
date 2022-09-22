@@ -1,3 +1,18 @@
+//MODAL EFFECT
+const openModalButton = document.querySelector('.open-modal');
+const closeModalButton = document.querySelector('.close-modal');
+const modal = document.querySelector('#modal');
+const fade = document.querySelector('#fade');
+
+const toggleModal = () => {
+    [modal, fade].forEach((el) => el.classList.toggle('hide'));
+}
+
+[openModalButton, closeModalButton, fade].forEach((e)=>(
+    e.addEventListener("click", () => toggleModal())
+))
+
+//DARK MODE
 const body = document.querySelector('body'),
     sidebar = body.querySelector('nav'),
     toggle = body.querySelector(".toggle"),
@@ -11,7 +26,16 @@ toggle.addEventListener("click", () => {
 })
 
 modeSwitch.addEventListener("click", () => {
-    body.classList.toggle("dark");
+
+    if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        localStorage.setItem("theme", "light");
+       
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem("theme", "dark");
+       
+      }
 
     if (body.classList.contains("dark")) {
         modeText.innerText = "Light mode";
@@ -21,14 +45,11 @@ modeSwitch.addEventListener("click", () => {
     }
 });
 
-document.getElementById("registerW").onclick = function (){
-    Swal.fire({
-        icon: 'success',
-        title: 'Login correct',
-        showConfirmButton: false,
-        timer: 2000
-    })
-};
+//LOCAL STORAGE
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add('dark');
+  }
+
 
 let editUser = document.getElementById("edit");
 let mod = document.querySelector(".modification");
@@ -36,4 +57,9 @@ let mod = document.querySelector(".modification");
 editUser.addEventListener('click', () => {
      mod.style.visibility = 'visible';
 });
+
+
+
+
+
 

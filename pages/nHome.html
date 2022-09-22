@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home</title>
+        <link rel="stylesheet" href="../css/home.css">
+
+        <!----===== Boxicons CSS ===== -->
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+
+    <body>
+        <nav class="sidebar close">
+            <header>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text"></span>
+                    </a>
+                </li>
+                <i class='bx bx-chevron-right toggle'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+
+                    <ul class="menu-links">
+
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-plus-circle icon'></i>
+                                <span id="registerW" class="text nav-text">Register wallet</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-receipt icon'></i>
+
+                                <span class="text nav-text">Movimentation</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-money-withdraw icon'></i>
+                                <span class="text nav-text">Withdraw money</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-money icon'></i>
+                                <span class="text nav-text">Deposit</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-wallet icon'></i>
+                                <span class="text nav-text">Wallets</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="#">
+                            <i id="logOut" class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                    <li class="mode">
+                        <div class="sun-moon">
+                            <i class='bx bx-moon icon moon'></i>
+                            <i class='bx bx-sun icon sun'></i>
+                        </div>
+                        <span class="mode-text text">Dark mode</span>
+
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <section class="home">
+            <div class="text">Welcome to home</div>
+        </section>
+
+
+        <section id="main">
+            <div class="r1 grid" draggable="true">
+
+                <div class="info-card">
+                    <h2>Cards</h2>
+                </div>
+
+                <button class="open-modal"> <i class="bx bx-add-to-queue"></i> Add card</button>
+
+                <div id="fade" class="hide"></div>
+                <div id="modal" class="hide">
+                    <div class="modal-header">
+                        <h2>Add your card</h2>
+                        <button class="close-modal">X</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="" method="POST">
+
+                            <div class="cardNum">
+                                <div class="flex-col">
+                                    <label for="">Card's number</label>
+                                    <input type="text" id="numberCard" name="numberCard " autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class=" cardName">
+                                <div class="flex-col">
+                                    <label for="">Card's name</label>
+                                    <input type="text" id="nameCard" name="nameCard " autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class=" cardExp">
+                                <div class="flex-col">
+                                    <label for="">Expires</label>
+                                    <input type="text" id="expirationDate" name="expirationDate " autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class=" cardSecur">
+                                <div class="flex-col">
+                                    <label for="">Code</label>
+                                    <input type="text" id="secureCode" name="secureCode " autocomplete="off">
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Send " autocomplete="off">
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="r2 grid" draggable="true"  data-tilt>
+
+                <h2>All transactions</h2>
+
+                <div class="content-transact">
+
+                    <div class="flex ">
+                        <img src="/imgs/letra.svg" alt="">
+                        <div class="">
+                            <h2>Matheus Victor</h2>
+                            <p>12/05/2022</p>
+                        </div>
+                        <span>R$ 4000,00</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="/imgs/letra1.svg" alt="">
+                        <div class="">
+                            <h2>Marcia Antonia</h2>
+                            <p>12/05/2022</p>
+                        </div>
+                        <span>R$ 4000,00</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="/imgs/letra2.svg" alt="">
+                        <div class="">
+                            <h2>Raquel Gomes</h2>
+                            <p>12/05/2022</p>
+                        </div>
+                        <span>R$ 4000,00</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="r3 grid" draggable="true" data-tilt>
+
+                <h2>Report</h2>
+
+            </div>
+
+            <div class="r4 grid" draggable="true" data-tilt>
+
+                <h2>Wallets</h2>
+
+                <div class="resume">
+                    <h2>Total</h2>
+                    <div class="line"></div>
+                    <span>R$ 2586,35</span>
+                </div>
+                <div class="number">
+                    <h3>Number of wallets</h3>
+                    <div class="line"></div>
+                    <span>5</span>
+                </div>
+
+                <div class="mini_wallets">
+                    <div class="flex_w">
+                        <img src="/imgs/wallet_icon.png" alt="">
+                        <span>College</span>
+                        <div class="line"></div>
+                        <span>R$ 150,20</span>
+                    </div>
+
+                    <div class="flex_w">
+                        <img src="/imgs/wallet_icon.png" alt=""> 
+                        <span>Supermarket</span> 
+                        <div class="line"></div>
+                        <span>R$220,20</span>
+                    </div>
+
+                    <div class="flex_w">
+                        <img src="/imgs/wallet_icon.png" alt=""> 
+                        <span>Fuel</span> 
+                        <div class="line"></div>
+                        <span>R$ 550,80</span>
+                    </div>
+
+                    <div class="flex_w">
+                        <img src="/imgs/wallet_icon.png" alt=""> 
+                        <span>Home</span> 
+                        <div class="line"></div>
+                        <span>R$ 630,20</span>
+                    </div>
+
+                    <div class="flex_w">
+                        <img src="/imgs/wallet_icon.png" alt=""> 
+                        <span>Shopping</span> 
+                        <div class="line"></div>
+                        <span>R$ 250,20</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="r5 grid" draggable="true" data-tilt>
+
+                <h2>Subscripition</h2>
+
+                <div class="content-sub">
+                    <div class="row">
+                        <img src="/imgs/netflix.svg" alt="">
+                        <span>Netflix</span>
+                        <p>10/06/2022</p>
+                        <span>R$ 70,00</span>
+                    </div>
+                    <div class="row">
+                        <img src="/imgs/musica.svg" alt="">
+                        <span>Spotify</span>
+                        <p>25/02/2022</p>
+                        <span>R$ 16,00</span>
+                    </div>
+                    <div class="row">
+                        <img src="/imgs/tv.svg" alt="">
+                        <span>Internet</span>
+                        <p>05/04/2022</p>
+                        <span>R$ 80,00</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="r7 grid" draggable="true" data-tilt>
+
+                <h2>Conversion</h2>
+
+                <div class="values">
+
+                    <div>R$ 10,00</div>
+                    <div>€ 50,00 </div>
+                    <div>¥ 200,00</div>
+                    <div>US$ 40,00</div>
+                    <div>£ 145,00</div>
+                    <div>$ 47,00</div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- ----------SCRIPT ------------- -->
+        <script src="../js/home.js"></script>
+
+        <script src="../js/main.js"></script>
+
+    </body>
+
+    </html>
+</body>
+
+</html>

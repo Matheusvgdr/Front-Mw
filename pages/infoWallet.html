@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallets</title>
-    <link rel="stylesheet" href="../css/wallet.css">
+    <link rel="stylesheet" href="../css/infoWallet.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -109,36 +109,102 @@
     </section>
 
 
-    <section id="main_wallet">
+    <section id="infoWallet">
 
-        
-
-        <div class="wallet">
-            <img src="../imgs/Wallet_brown.svg" alt="">
-            <div class="main_container">
-
-                <h2>Faculdade</h2>
-                <span>R$ 52.55</span>
-
-
-            </div>
-
-            <div class="container_icons">
-                <a href="#"><i class='bx bx-edit icon '></i></a>
-                <a href=""><i class='bx bx-x-circle icon '></i></a>
-                <a href=""><i class='bx bx-wallet-alt icon '></i></a>
-            </div>
-
+        <div class="info">
+            <img src="" alt="">
+            <h2>Faculdade</h2>
         </div>
 
-        
+        <div class="ocean">
+
+            <div class="wave"></div>
+            <div class="wave"></div>
+    
+        </div>
+
     </section>
 
+    <section id="toDoList">
+
+        <div class="board">
+
+            <h2>To buy</h2>
+
+            <div class="dropzone">
+                <div class="card" draggable="true">
+                    <!-- <div class="status"></div> -->
+                    <span class="content">Ink</span>
+                    <span>R$ 61,40</span>
+
+                </div>
+
+                <div class="card" draggable="true">
+
+                    <span class="content">Spices</span>
+                    <span>R$ 28,05</span>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="board">
+
+            <h2>Bought</h2>
+
+            <div class="dropzone">
+                <div class="card" draggable="true">
+
+                    <span class="content">Pasta</span>
+                    <span>R$ 10,00</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <aside id="resume"> 
+        <div class="withdraw container_resume">
+
+			<div class="main_container ">
+				<h2>Day's Withdraw</h2>
+				<span>R$ 50,00</span>
+
+			</div>
+			<img src="../imgs/money_down.svg" alt="">
+
+		</div>
+
+		<div class="wallets container_resume">
+			<div class="main_container">
+				<h2>Your wallets</h2>
+			</div>
+			<img src="../imgs/Wallet_brown.svg" alt="">
+		</div>
+
+		<div class="deposit container_resume">
+			<div class="main_container">
+				<h2>Day's deposit</h2>
+				<span>R$ 150,00</span>
+			</div>
+			<img src="../imgs/money_up.svg" alt="">
+		</div>
+
+		<div class="money container_resume">
+			<div class="main_container">
+				<h2>Money</h2>
+				<span>R$ 60,00</span>
+			</div>
+			<img src="../imgs/money.svg" alt="">
+		</div>
+    </aside>
+
+   
 
     
     <!-- ----------SCRIPT ------------- -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/home.js"></script>
+    <script src="../js/wallet.js"></script>
 </body>
 
 </html>
