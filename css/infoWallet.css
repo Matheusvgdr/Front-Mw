@@ -22,6 +22,7 @@
   --color-text: #08070B;
   --color-input: #909090;
   --colo-text-button: #ffffff;
+  --text-color-second: #222;
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
@@ -42,6 +43,7 @@ body {
 }
 
 body.dark {
+  --text-color-second: #fff;
   --body-color: #18191a;
   --sidebar-color: #242526;
   --primary-color: #3a3b3c;
@@ -345,6 +347,10 @@ body.dark .home .text {
 #infoWallet h2 {
   font-size: 50px;
 }
+
+.content{
+  color:var(--text-color-second);
+}
 /*---------WAVE EFFECT--------------*/
 .ocean {
   height: 5%;
@@ -484,7 +490,7 @@ body.dark .home .text {
   width: 59.5vw;
   height: 63vh;
   float: left;
-  color: #242526;
+  color:var(--text-color-second);
   position: relative;
   left: 5.38%;
   padding: 12px 25px;
